@@ -1,0 +1,23 @@
+{
+  "name": "gro-components",
+  "version": "0.0.1",
+  "description": "reusable web components based on vanilla JS custom elements",
+  "main": "index.js",
+  "scripts": {
+    "e2e": "node ./node_modules/mocha/bin/mocha --require ./ts_hook.js --timeout=30000 components/**/*.spec.ts"
+  },
+  "author": "ali masood <ali@gro.jp>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.3.1",
+    "@types/mocha": "^9.1.1",
+    "@types/puppeteer": "^5.4.6",
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.1",
+    "mocha": "^10.0.0",
+    "puppeteer": "^14.2.1",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  }
+}
