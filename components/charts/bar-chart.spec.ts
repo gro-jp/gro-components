@@ -24,8 +24,8 @@ describe("chart component basic functionality test", () => {
 
         const importComponent = await page.evaluate(() => {
             const newScript = document.createElement('script');
-            newScript.type = 'text/javascript';
-            newScript.src = 'graph.js';
+            newScript.type = 'module';
+            newScript.src = 'components/charts/bar-chart.js';
             document.getElementsByTagName("head")[0].appendChild(newScript);
         });
 

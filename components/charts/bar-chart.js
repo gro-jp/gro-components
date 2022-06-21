@@ -1,4 +1,37 @@
+const templateBarChart = document.createElement('template');
+templateBarChart.innerHTML = `
+<style>
+:host {
+    display: block;
+}
+:host([hidden]) {
+    display: none 
+}
+</style>
+<div></div>
+`;
+
 class BarChart extends HTMLElement {
+
+    #uri;
+    #param1;
+    #param2;
+
+    constructor() {
+        super();
+        this.attachShadow({mode: 'open'});
+        this.shadowRoot.appendChild(templateComboChart.content.cloneNode(true));
+    }
+
+    async connectedCallback() {
+        document.addEventListener('params-changed', e => {
+            this.setAttribute('param1', e.detail.param1);
+            this.setAttribute('param2', e.detail.param2);
+            this.renderChart();
+        });
+        await google.charts.load('current', {'packages':['corechart']});
+        await this.renderChart();
+    }
 
     // A getter/setter for an open property.
     get open() {
